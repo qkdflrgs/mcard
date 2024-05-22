@@ -11,7 +11,7 @@
       "@models/*": ["src/models/*"],
       "@pages/*": ["src/pages/*"],
       "@mock/*": ["src/mock/*"],
-      "@constants": ["src/constants/index.ts"]
+      "@constants": ["src/constants/index"]
     }
   }
 }
