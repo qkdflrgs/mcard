@@ -1,5 +1,5 @@
-import { getAdBanners } from '@/remote/adBanner'
-import { colors } from '@/styles/colorPalette'
+import { getAdBanners } from '@remote/adBanner'
+import { colors } from '@styles/colorPalette'
 import Flex from '@common/Flex'
 import Text from '@common/Text'
 import { css } from '@emotion/react'
