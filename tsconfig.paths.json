@@ -5,7 +5,9 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@remote/*": ["src/remote/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@common/*": ["src/components/common/*"],
+      "@contexts/*": ["src/contexts/*"]
     }
   }
 }
