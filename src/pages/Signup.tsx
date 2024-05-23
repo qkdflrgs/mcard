@@ -1,9 +1,9 @@
 import { FormValues } from '@models/signup'
 import Form from '@components/signup/Form'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { auth, store } from '@/remote/firebase'
+import { auth, store } from '@remote/firebase'
 import { collection, doc, setDoc } from 'firebase/firestore'
-import { COLLECTIONS } from '@/constants'
+import { COLLECTIONS } from '@constants'
 import { useNavigate } from 'react-router-dom'
 
 function SignupPage() {

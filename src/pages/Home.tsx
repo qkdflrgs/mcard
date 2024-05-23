@@ -1,6 +1,6 @@
 import AdBanners from '@components/home/AdBanners'
 import Top from '@common/Top'
-import CardList from '@/components/home/CardList'
+import CardList from '@components/home/CardList'
 
 function HomePage() {
   return (

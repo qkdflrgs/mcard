@@ -1,4 +1,4 @@
-import { colors } from '@/styles/colorPalette'
+import { colors } from '@styles/colorPalette'
 import styled from '@emotion/styled'
 import Button from './Button'
 import Dimmed from './Dimmed'
@@ -17,7 +17,7 @@ function Alert({
   open,
   title,
   description,
-  buttonLabel,
+  buttonLabel = '확인',
   onButtonClick,
 }: AlertProps) {
   if (!open) return null
@@ -35,7 +35,11 @@ function Alert({
         </Text>
         {description && <Text typography="t7">{description}</Text>}
         <Flex justify={'flex-end'}>
-          <Button onClick={onButtonClick} weak={true}>
+          <Button
+            onClick={onButtonClick}
+            weak={true}
+            style={{ marginTop: 12, border: 'none' }}
+          >
             {buttonLabel}
           </Button>
         </Flex>
