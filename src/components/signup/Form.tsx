@@ -55,6 +55,7 @@ function Form({ onSubmit }: FormProps) {
       <TextField
         label="비밀번호"
         name="password"
+        type="password"
         placeholder="비밀번호를 입력해주세요"
         value={formValues.password}
         onChange={handleFormValues}
@@ -66,6 +67,7 @@ function Form({ onSubmit }: FormProps) {
       <TextField
         label="비밀번호 확인"
         name="rePassword"
+        type="password"
         placeholder="비밀번호를 다시 입력해주세요"
         value={formValues.rePassword}
         onChange={handleFormValues}
