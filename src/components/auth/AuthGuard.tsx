@@ -18,6 +18,7 @@ function AuthGuard({ children }: AuthGuardProps) {
         uid: user.uid,
         email: user.email ?? '',
         displayName: user.displayName ?? '',
+        photoURL: user.photoURL ?? '',
       })
     } else {
       setUser(null)
