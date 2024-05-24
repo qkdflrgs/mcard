@@ -3,7 +3,7 @@ import Form from '@components/signin/Form'
 import { useCallback } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@remote/firebase'
-import { useAlertContext } from '@/contexts/AlertContext'
+import { useAlertContext } from '@contexts/AlertContext'
 import { FirebaseError } from 'firebase/app'
 import { useNavigate } from 'react-router-dom'
 

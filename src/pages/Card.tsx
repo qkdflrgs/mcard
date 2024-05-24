@@ -1,21 +1,42 @@
-import Text from '@components/common/Text'
-import FixedBottomButton from '@components/common/FixedBottomButton'
-import ListRow from '@components/common/ListRow'
-import Top from '@components/common/Top'
+import Text from '@common/Text'
+import FixedBottomButton from '@common/FixedBottomButton'
+import ListRow from '@common/ListRow'
+import Top from '@common/Top'
 import { getCard } from '@remote/card'
 import { useQuery } from 'react-query'
-import { useParams } from 'react-router-dom'
-import Flex from '@components/common/Flex'
+import { useNavigate, useParams } from 'react-router-dom'
+import Flex from '@common/Flex'
 import { css } from '@emotion/react'
 import { motion } from 'framer-motion'
+import { useCallback } from 'react'
+import useUser from '@hooks/useUser'
+import { useAlertContext } from '@contexts/AlertContext'
 
 function CardPage() {
+  const navigate = useNavigate()
+  const user = useUser()
+  const { open } = useAlertContext()
   const { id = '' } = useParams()
   const { data } = useQuery({
     queryKey: ['card', id],
     queryFn: () => getCard(id),
     enabled: id !== '',
   })
+
+  const moveToApply = useCallback(() => {
+    if (user == null) {
+      open({
+        title: '로그인이 필요한 기능입니다',
+        onButtonClick: () => {
+          navigate('/signin')
+        },
+      })
+
+      return
+    }
+
+    navigate(`/apply/${data?.id}`)
+  }, [user, data?.id, navigate, open])
 
   if (data == null) return null
 
@@ -30,6 +51,7 @@ function CardPage() {
         {data.benefit.map((text, index) => {
           return (
             <motion.li
+              key={text}
               initial={{ opacity: 0, translateX: -90 }}
               animate={{ opacity: 1, translateX: 0 }}
               transition={{
@@ -58,7 +80,7 @@ function CardPage() {
         </Flex>
       )}
 
-      <FixedBottomButton label="신청하기" onClick={() => {}} />
+      <FixedBottomButton label="신청하기" onClick={moveToApply} />
     </div>
   )
 }

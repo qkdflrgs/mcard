@@ -1,4 +1,4 @@
-import { getCards } from '@/remote/card'
+import { getCards } from '@remote/card'
 import { useInfiniteQuery } from 'react-query'
 import ListRow from '@common/ListRow'
 import { flatten } from 'lodash'
