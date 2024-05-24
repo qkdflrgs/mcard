@@ -8,8 +8,9 @@ import SignupPage from '@pages/Signup'
 import Navbar from '@common/Navbar'
 import PrivateRoute from '@components/auth/PrivateRoute'
 import ApplyPage from '@pages/Apply'
-import ApplyDonePage from './pages/ApplyDone'
+import ApplyDonePage from '@pages/ApplyDone'
 import { Suspense } from 'react'
+import MyPage from '@pages/My'
 
 function App() {
   return (
@@ -35,6 +36,14 @@ function App() {
           element={
             <PrivateRoute>
               <ApplyDonePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute>
+              <MyPage />
             </PrivateRoute>
           }
         />
